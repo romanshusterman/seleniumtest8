@@ -1,24 +1,26 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[0]:
 
 
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import os
 
+# In[1]
 
-# In[2]:
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument("enable-automation")
+options.add_argument("--disable-infobars")
+options.add_argument("--disable-dev-shm-usage")
+PATH_GD = '⁨/usr/bin/chromedriver'
 
-
-PATH_GD = '⁨Macintosh HD⁩/⁨Users⁩/romandavydov⁩/⁨Documents/chromedriver.exe⁩'
-
-
-# In[22]:
-
-
-driver = webdriver.Chrome(PATH_GD)
+driver = webdriver.Chrome(PATH_GD, options=options)
 
 
 # In[23]:
@@ -57,28 +59,7 @@ else:
     result = 'Error'
     print(result)
 
-
-# In[27]:
-
-
-with open(#'Desktop/Masterschool/Selenium_Scraper_Lip_Pencil/
-    'rand2.txt', mode='a') as file:
-    file.write(result)
-
-
-# In[28]:
-
-
 print(result)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
